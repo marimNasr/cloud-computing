@@ -64,7 +64,7 @@ class _SignUpState extends State<SignUp> {
                     const SizedBox(height: 40),
                     const Row(
                       children: [
-                        SizedBox(width: 25),
+                        SizedBox(width: 45),
                         Row(
                           children: [
                             Column(
@@ -108,6 +108,13 @@ class _SignUpState extends State<SignUp> {
                               fKey: fKey,
                               textColor: Colors.black,
                             ),
+                    const SizedBox(height: 20),
+                            CustomTextfrom(
+                              labelText: "Phone",
+                              controller: context.read<AuthCubit>().phoneup,
+                              fKey: fKeyph,
+                              textColor: Colors.black,
+                            ),
                             const SizedBox(height: 20),
                             SecretTextform(
                               labelText: "Password",
@@ -125,7 +132,7 @@ class _SignUpState extends State<SignUp> {
                               textColor: Colors.black,
                             ),
 
-                            const SizedBox(height: 70),
+                            const SizedBox(height: 50),
                              state is SignUpLoading ? const CircularProgressIndicator() : MaterialButton(
                               color: Color.fromARGB(255, 153,108,250),
                               minWidth: 150,
@@ -164,7 +171,8 @@ class _SignUpState extends State<SignUp> {
                   ],
                 );
   },
-),)
+),
+     )
           ],
         ),
       ),

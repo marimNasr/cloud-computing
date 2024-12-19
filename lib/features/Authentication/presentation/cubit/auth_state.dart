@@ -24,3 +24,27 @@ class GoogleSignInError extends AuthState {
   final String error;
   GoogleSignInError(this.error);
 }
+
+class PhoneSignInLoading extends AuthState {}
+class PhoneSignInSuccess extends AuthState {}
+class PhoneSignInError extends AuthState {
+  final String error;
+  PhoneSignInError(this.error);
+}
+
+class PhoneCodeSent extends AuthState {
+  final String verificationId;
+  PhoneCodeSent(this.verificationId);
+}
+
+class PhoneAutoRetrievalTimeout extends AuthState {
+  final String verificationId;
+  PhoneAutoRetrievalTimeout(this.verificationId);
+}
+
+class PhoneVerificationLoading extends AuthState {}
+class PhoneVerificationSuccess extends AuthState {}
+class PhoneVerificationError extends AuthState {
+  final String error;
+  PhoneVerificationError(this.error);
+}

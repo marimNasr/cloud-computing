@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../Authentication/presentation/views/signIn.dart';
+import '../../../analytics/analytics.dart';
 import '../../../chat/presentation/views/chat_screen.dart';
 import '../../data/channel_model.dart';
 
@@ -134,6 +135,7 @@ class ChannelsPage extends StatelessWidget {
                                 await FirebaseFirestore.instance.collection("User").doc(uID).update({
                                   "channels": FieldValue.arrayUnion([docId]),  // Add the channel to the user's "channels" array
                                 });
+                                await logSubscriptionEvent(docId, true);
                               }
 
                             } catch (e) {
